@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dice Roller</title>
+    <link type="text/css" rel="stylesheet" href="assets/stylesheets/style.css">
+    
 </head>
 <body>
-    
+
+    <div><label for="dicenumber">How many dice to roll?</label></div>
+
+    <div><input type="text" id="dicenumber" name="dicecount" required
+           minlength="1" maxlength="29" size="10"></div>
+           
+           <div><button class="diceroll" type="button">
+    ROLL THEM DICE!!
+</button></div>
+
+<div>Total Roll:</div>
+
+<div><button class="rollreveal" type="button">Show All Rolls</button></div>
+
+<div>
+    Dice roll list placeholder
+</div>
+<script src="./assets/javascript/main.js"></script>
 </body>
-</html>>
+
+</html>
