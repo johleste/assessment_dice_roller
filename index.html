@@ -9,23 +9,24 @@
 </head>
 <body>
 
-    <div><label for="dicenumber">How many dice to roll?</label></div>
+    <div>How many dice to roll?</div>
 
-    <div><input type="text" id="dicenumber" name="dicecount" required
-           minlength="1" maxlength="29" size="10"></div>
+    <div><input type="number" name="dicenumber" id="DiceNumber"></div>
+    <div>How many sides?</div>
+    <divdiv><input type="number" name="dicesides" id="DiceSides"></div>
            
-           <div><button class="diceroll" type="button">
+           <div><button id="DiceRoll" type="button">
     ROLL THEM DICE!!
 </button></div>
 
-<div>Total Roll:</div>
+Total Roll:<div id="TotalRoll">0</div>
+<div><button id ="Reset" type="button">Reset</button></div>
 
-<div><button class="rollreveal" type="button">Show All Rolls</button></div>
+<div><button id="RollReveal" type="button">Show All Rolls</button></div>
 
-<div>
-    Dice roll list placeholder
-</div>
-<script src="./assets/javascript/main.js"></script>
+
+<div id="RollList" name="dicereveal"></div>
+<div id="ListPlaceHolder"></div>
+<script src="assets/javascript/main.js"></script>
 </body>
-
 </html>
