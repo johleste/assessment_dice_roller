@@ -65,8 +65,7 @@ total.innerHTML= totalNumber }})
 //spit out the array list. rolls should be an ordered list.
 revealButton.addEventListener ("click", function() {
  countDown = listCounter
- console.log("List Counter" + " " + listCounter)
- RollReveal.innerHTML = " "   
+ console.log("List Counter" + " " + listCounter)   
  console.log(diceArray);
  rollOutput = diceArray;
  console.log(rollOutput);
@@ -74,8 +73,7 @@ revealButton.addEventListener ("click", function() {
  while (countDown > 0){  
  countDown = countDown - 1;
 console.log(countDown)
-diceArray.splice(0,1)
- RollReveal.innerHTML += "<li>" + diceArray + "</li>"
+ rollList.innerHTML += "<li>" + rollOutput[countDown] + "</li>"
 
  }
 })
@@ -91,7 +89,7 @@ resetButton.addEventListener("click", function(){
     total.innerHTML = 0
     delete diceArray
     diceArray = []
-    RollReveal.innerHTML = "Show All Rolls"
+    rollList.innerHTML = ""
     Total = 0
 })
 
