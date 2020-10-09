@@ -4,6 +4,8 @@ const rollButton = document.querySelector ("#DiceRoll")
 const revealButton = document.querySelector("#RollReveal")
 const diceSides = document.querySelector("#DiceSides")
 const resetButton = document.querySelector("#Reset")
+const rollList = document.querySelector("#RollList")
+var rollOutput = [];
 var diceSided = 0
 var totalNumber = 0
 var dieRoll = 0
@@ -56,9 +58,11 @@ total.innerHTML= totalNumber }})
 
 //spit out the array list. rolls should be an ordered list.
 revealButton.addEventListener ("click", function() {
- console.log(diceArray)
- diceArray.toString(diceList)
- console.log(diceList)
+ console.log(diceArray);
+ rollOutput = diceArray;
+ 
+ console.log(rollOutput);
+ RollReveal.innerHTML += "<li>"+ [diceArray] + "</li>";
 
 })
 //reset button
@@ -69,6 +73,7 @@ resetButton.addEventListener("click", function(){
     total.innerHTML = 0
     delete diceArray
     diceArray = []
+    RollReveal.innerHTML = "Show All Rolls"
 })
 
 
