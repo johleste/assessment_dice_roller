@@ -5,6 +5,9 @@ const revealButton = document.querySelector("#RollReveal")
 const diceSides = document.querySelector("#DiceSides")
 const resetButton = document.querySelector("#Reset")
 const rollList = document.querySelector("#RollList")
+let listCounter = 0;
+let countDown = 0;
+var listOutput = [];
 var rollOutput = [];
 var diceSided = 0
 var totalNumber = 0
@@ -23,6 +26,9 @@ rollButton.addEventListener ("click", function () {
 dieCounter = dieRolls.value;
 diceSided = diceSides.value;
 console.log(dieCounter)
+listCounter = listCounter + dieCounter;
+console.log("list counter" + " " + listCounter)   
+
 while (dieCounter > 0){
 diceRoll = (Math.floor(Math.random() * diceSided) + 1);
 if ((diceSided === 20) || (diceRoll === 1)){
@@ -58,15 +64,27 @@ total.innerHTML= totalNumber }})
 
 //spit out the array list. rolls should be an ordered list.
 revealButton.addEventListener ("click", function() {
+ countDown = listCounter
+ console.log("List Counter" + " " + listCounter)
+ RollReveal.innerHTML = " "   
  console.log(diceArray);
  rollOutput = diceArray;
- 
  console.log(rollOutput);
- RollReveal.innerHTML += "<li>"+ [diceArray] + "</li>";
+ console.log("starting reveal while loop")
+ while (countDown > 0){  
+ countDown = countDown - 1;
+console.log(countDown)
+diceArray.splice(0,1)
+ RollReveal.innerHTML += "<li>" + diceArray + "</li>"
 
+ }
 })
+
+
+
 //reset button
 resetButton.addEventListener("click", function(){
+    listCounter = 0
     totalNumber = 0
     dieCounter = 0
     diceRoll = 0
@@ -74,6 +92,7 @@ resetButton.addEventListener("click", function(){
     delete diceArray
     diceArray = []
     RollReveal.innerHTML = "Show All Rolls"
+    Total = 0
 })
 
 
